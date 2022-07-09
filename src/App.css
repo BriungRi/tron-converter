@@ -1,0 +1,37 @@
+.App {
+  text-align: left;
+  background-color: #a1a1a1;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.App header {
+  font-size: 4rem;
+  margin-bottom: 48px;
+}
+
+.InputSection {
+  margin: 48px 0px;
+}
+
+.App label {
+  margin-bottom: 4px;
+  display: block;
+}
+
+.InputField {
+  width: 320px;
+  height: 24px;
+  font-size: 1rem;
+  margin-right: 4px;
+}
+
+.InputButton {
+  height: 32px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.ConversionResult {
+  font-size: 1rem;
+}
