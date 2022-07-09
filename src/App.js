@@ -60,7 +60,14 @@ function App() {
           <input className="InputField" type="text" ref={hexInput} />
           <input className="InputButton" type="submit" name="Convert" />
           <p className="ConversionResult">
-            Tron address: <strong>{tronAddress}</strong>
+            Tron address: <strong>{tronAddress} </strong>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={`https://tronscan.org/#/address/${tronAddress}`}
+            >
+              View on Tronscan
+            </a>
           </p>
         </form>
       </div>
