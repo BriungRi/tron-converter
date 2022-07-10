@@ -61,13 +61,15 @@ function App() {
           <input className="InputButton" type="submit" name="Convert" />
           <p className="ConversionResult">
             Tron address: <strong>{tronAddress} </strong>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={`https://tronscan.org/#/address/${tronAddress}`}
-            >
-              View on Tronscan
-            </a>
+            {tronAddress !== "" && (
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`https://tronscan.org/#/address/${tronAddress}`}
+              >
+                View on Tronscan
+              </a>
+            )}
           </p>
         </form>
       </div>
@@ -75,15 +77,16 @@ function App() {
       <hr />
 
       <div>
-        <a
-          class="github-button"
-          href="https://github.com/BriungRi/tron-converter"
-          data-size="large"
-          data-show-count="true"
-          aria-label="Star BriungRi/tron-converter on GitHub"
-        >
-          Star
-        </a>
+        <p>
+          View source on{" "}
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/briungri/tron-converter"
+          >
+            Github
+          </a>
+        </p>
       </div>
     </div>
   );
