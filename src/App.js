@@ -75,16 +75,15 @@ function App() {
       <hr />
 
       <div>
-        <p>
-          View source on{" "}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/briungri/tron-converter"
-          >
-            Github
-          </a>
-        </p>
+        <a
+          class="github-button"
+          href="https://github.com/BriungRi/tron-converter"
+          data-size="large"
+          data-show-count="true"
+          aria-label="Star BriungRi/tron-converter on GitHub"
+        >
+          Star
+        </a>
       </div>
     </div>
   );
