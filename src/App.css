@@ -4,6 +4,7 @@ body {
   background-color: #f8f9fa;
   margin: 0;
   padding: 0;
+  color: #212529;
 }
 
 .App {
@@ -48,6 +49,13 @@ h2 {
   border: 1px solid #ccc;
   margin-bottom: 1rem;
   box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.InputField:focus {
+  border-color: #cc0000;
+  box-shadow: 0 0 0 2px rgba(204, 0, 0, 0.1);
+  outline: none;
 }
 
 .InputButton {
@@ -61,4 +69,36 @@ h2 {
   transition: background-color 0.2s ease;
 }
 
-.InputButton:hover
+.InputButton:hover {
+  background-color: #a60000;
+}
+
+.ConversionResult {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.ConversionResult a {
+  margin-left: 8px;
+  font-size: 0.9rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.ConversionResult a:hover {
+  text-decoration: underline;
+}
+
+/* Optional: divider */
+hr {
+  border: none;
+  border-top: 1px solid #dee2e6;
+  margin: 3rem 0;
+}
+
+/* Responsive padding */
+@media (max-width: 640px) {
+  .App {
+    padding: 2rem 1rem;
+  }
+}
