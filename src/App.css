@@ -1,6 +1,6 @@
 /* Global styles */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: #f8f9fa;
   margin: 0;
   padding: 0;
@@ -86,6 +86,22 @@ h2 {
 }
 
 .ConversionResult a:hover {
+  text-decoration: underline;
+}
+
+.Footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.Footer a {
+  color: #cc0000;
+  text-decoration: none;
+}
+
+.Footer a:hover {
   text-decoration: underline;
 }
 
