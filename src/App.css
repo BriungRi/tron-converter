@@ -1,37 +1,64 @@
+/* Global styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  text-align: left;
-  background-color: #cccccc;
-  padding: 40px 20px;
-  min-height: 100vh;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
 }
 
 .App header {
-  font-size: 4rem;
-  margin-bottom: 48px;
+  font-size: 2.75rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 2.5rem;
+  text-align: center;
 }
 
 .InputSection {
-  margin: 48px 0px;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  color: #444;
+  margin-bottom: 0.75rem;
 }
 
 .App label {
-  margin-bottom: 4px;
+  font-size: 0.95rem;
   display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
 }
 
 .InputField {
-  width: 320px;
-  height: 24px;
+  width: 100%;
+  padding: 0.6rem 0.75rem;
   font-size: 1rem;
-  margin-right: 4px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
 }
 
 .InputButton {
-  height: 32px;
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
   font-size: 1rem;
-  margin-bottom: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.ConversionResult {
-  font-size: 1rem;
-}
+.InputButton:hover
