@@ -73,21 +73,6 @@ function App() {
           </p>
         </form>
       </div>
-
-      <hr />
-
-      <div>
-        <p>
-          View source on{" "}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/briungri/tron-converter"
-          >
-            Github
-          </a>
-        </p>
-      </div>
     </div>
   );
 }
