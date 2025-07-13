@@ -1,5 +1,7 @@
 # Tron Converter
 
+[![CI](https://github.com/BriungRi/tron-converter/actions/workflows/ci.yml/badge.svg)](https://github.com/BriungRi/tron-converter/actions/workflows/ci.yml)
+
 A web application for converting between TRON and Ethereum address formats.
 
 🌐 **Live Site**: [tron-converter.com](https://tron-converter.com)
