@@ -9,12 +9,7 @@ export default defineConfig({
       include: '**/*.{jsx,js,tsx,ts}',
     }),
   ],
-  // Treat .js files as JSX for esbuild
-  esbuild: {
-    loader: 'jsx',
-    include: /src\/.*\.js$/,
-    exclude: [],
-  },
+  // Removed custom esbuild loader to let Vite handle TS/TSX properly
   optimizeDeps: {
     esbuildOptions: {
       loader: {
@@ -25,6 +20,6 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: './src/setupTests.js',
+    setupFiles: './src/setupTests.ts',
   },
 });

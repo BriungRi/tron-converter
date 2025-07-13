@@ -26,9 +26,16 @@
     "@vitejs/plugin-react": "^4.0.0",
     "eslint": "^8.52.0",
     "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "typescript": "^5.3.3"
   },
   "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2021,
+      "sourceType": "module"
+    },
     "extends": [
       "eslint:recommended",
       "plugin:react/recommended",
