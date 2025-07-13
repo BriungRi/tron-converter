@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useCallback, useState, useRef } from "react";
 import { toHex, fromHex } from "./utils";
-import { toChecksumAddress } from "ethereum-checksum-address";
+import { toChecksumAddress } from "./utils/checksum";
 
 function App(): JSX.Element {
   const [hexAddress, setHexAddress] = useState<string>("");
