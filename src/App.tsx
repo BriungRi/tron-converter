@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useCallback, useState, useRef } from "react";
 import { toHex, fromHex } from "./utils";
-import { toChecksumAddress } from "ethereum-checksum-address";
+import { utils as ethersUtils } from "ethers";
 
 function App(): JSX.Element {
   const [hexAddress, setHexAddress] = useState<string>("");
@@ -16,7 +16,9 @@ function App(): JSX.Element {
       try {
         const input = tronInput.current?.value ?? "";
         if (input) {
-          const convertedHex = toChecksumAddress(toHex(input).substring(2));
+          const convertedHex = ethersUtils.getAddress(
+            toHex(input).substring(2)
+          );
           setHexAddress(convertedHex);
         }
       } catch (err) {
