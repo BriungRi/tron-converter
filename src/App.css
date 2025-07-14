@@ -1,6 +1,6 @@
 /* Global styles */
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: #f8f9fa;
   margin: 0;
   padding: 0;
@@ -49,7 +49,9 @@ h2 {
   border: 1px solid #ccc;
   margin-bottom: 1rem;
   box-sizing: border-box;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .InputField:focus {
@@ -90,15 +92,18 @@ h2 {
 }
 
 .Footer {
-  margin-top: 2rem;
+  margin-top: 4rem;
+  padding-top: 1rem;
   text-align: center;
   font-size: 0.9rem;
-  color: #666;
+  color: #555;
+  border-top: 1px solid #eee;
 }
 
 .Footer a {
-  color: #cc0000;
+  color: #b10000;
   text-decoration: none;
+  margin: 0 0.5rem;
 }
 
 .Footer a:hover {

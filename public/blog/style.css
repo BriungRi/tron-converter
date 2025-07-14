@@ -1,0 +1,45 @@
+body {
+  font-family: 'Inter', sans-serif;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.7;
+  background-color: #fafafa;
+  color: #222;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #cc0000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code {
+  background-color: #eee;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.95em;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+ul {
+  padding-left: 1.5rem;
+}

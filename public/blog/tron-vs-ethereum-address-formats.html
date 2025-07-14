@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn why TRON and Ethereum wallet addresses use different formats like Base58Check and hexadecimal, and what that means for compatibility."
+    />
+    <title>TRON vs. Ethereum Address Formats</title>
+    <link rel="stylesheet" href="/blog/style.css" />
+  </head>
+  <body>
+    <article>
+      <h1>TRON vs. Ethereum: Why Different Address Formats?</h1>
+      <p><strong>Published:</strong> July 14, 2025</p>
+
+      <p>
+        TRON and Ethereum both use public key cryptography to generate wallet
+        addresses, but their formats differ significantly. Let’s break down how
+        and why.
+      </p>
+
+      <h2>TRON Addresses: Base58Check Format</h2>
+      <p>
+        TRON uses <code>Base58Check</code> encoding for user-facing wallet
+        addresses. This format:
+      </p>
+      <ul>
+        <li>Is derived from Bitcoin-style encoding</li>
+        <li>
+          Starts with the letter <strong>T</strong> when displayed (e.g.,
+          <code>TNPeeaaFB7...</code>)
+        </li>
+        <li>
+          Encodes a hex address that starts with <code>41</code> (TRON’s network
+          prefix)
+        </li>
+        <li>Includes a 4-byte checksum for added safety</li>
+      </ul>
+
+      <p>
+        TRON’s hex address (e.g. <code>418840E6C5...</code>) is obtained by
+        prepending <code>41</code> to the last 20 bytes of a Keccak-256 hash of
+        the public key. The Base58Check string is then encoded from this.
+      </p>
+
+      <h2>Ethereum Addresses: Hex Format</h2>
+      <p>Ethereum addresses are:</p>
+      <ul>
+        <li>Also derived from a Keccak-256 hash of the public key</li>
+        <li>
+          Encoded in <strong>hexadecimal</strong> with a <code>0x</code> prefix
+        </li>
+        <li>
+          Optionally checksummed using
+          <a
+            href="https://eips.ethereum.org/EIPS/eip-55"
+            target="_blank"
+            rel="noopener noreferrer"
+            >EIP-55</a
+          >
+          (mixed-case checksum)
+        </li>
+      </ul>
+
+      <p>
+        For example, an Ethereum address might look like:
+        <code>0x8840e6c55b9aDA326D211d818C34a994aEcEd808</code>
+      </p>
+
+      <h2>Are They Compatible?</h2>
+      <p>
+        Sort of — they’re built on similar cryptographic foundations (both use
+        <code>secp256k1</code> keys and Keccak-256), but:
+      </p>
+      <ul>
+        <li>
+          TRON hex addresses always start with <code>41</code>, Ethereum’s with
+          <code>0x</code>
+        </li>
+        <li>TRON uses Base58Check for user display, Ethereum uses hex</li>
+      </ul>
+      <p>
+        So while the underlying keys are compatible, the formats are not
+        directly interchangeable — which is why conversion tools like this site
+        are useful.
+      </p>
+
+      <h2>Further Reading</h2>
+      <ul>
+        <li>
+          <a
+            href="https://developers.tron.network/docs/account"
+            target="_blank"
+            rel="noopener noreferrer"
+            >TRON Address Format Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://ethereum.org/en/developers/docs/accounts/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Ethereum Account Overview</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://eips.ethereum.org/EIPS/eip-55"
+            target="_blank"
+            rel="noopener noreferrer"
+            >EIP-55: Mixed-case checksum</a
+          >
+        </li>
+      </ul>
+
+      <p><a href="/">← Back to Tron Converter</a></p>
+    </article>
+  </body>
+</html>

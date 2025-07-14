@@ -93,13 +93,14 @@ function App(): JSX.Element {
 
       <div className="Footer">
         <p>
-          View source on{' '}
+          <a href="/blog/">Learn about TRON address formats</a>
+          &middot;
           <a
             href="https://github.com/BriungRi/tron-converter"
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub
+            View source on GitHub
           </a>
         </p>
       </div>

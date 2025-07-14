@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Understand how TRON addresses are validated using Base58Check encoding and checksums."
+    />
+    <title>Validating TRON Addresses Securely</title>
+    <link rel="stylesheet" href="/blog/style.css" />
+  </head>
+  <body>
+    <article>
+      <h1>Validating TRON Addresses Securely</h1>
+      <p><strong>Published:</strong> July 14, 2025</p>
+      <p>
+        All TRON addresses begin with a <code>T</code> when in Base58 format.
+        Internally, they are derived from a hex address that starts with the
+        <code>41</code> prefix. This prefix distinguishes them from Ethereum
+        addresses, which start with <code>0x</code>.
+      </p>
+
+      <p>
+        TRON and Ethereum both use the same key pair generation algorithm (ECDSA
+        with secp256k1). The main difference lies in the address prefix and
+        encoding:
+      </p>
+      <ul>
+        <li>TRON hex addresses start with <code>41</code></li>
+        <li>
+          Ethereum addresses omit this prefix and start with <code>0x</code>
+        </li>
+        <li>
+          Base58Check encoding of a TRON hex address results in a Base58 address
+          that starts with <code>T</code>
+        </li>
+      </ul>
+
+      <p>
+        For example, the TRON Base58 address:
+        <code>TNPeeaaFB7K9cmo4uQpcU32zGK8G1NYqeL</code><br />
+        corresponds to hex:
+        <code>418840E6C55B9ADA326D211D818C34A994AECED808</code>
+      </p>
+
+      <p>
+        For more details, see the
+        <a
+          href="https://developers.tron.network/docs/account"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          TRON Developer Docs on Account Addresses </a
+        >.
+      </p>
+
+      <a href="/">← Back to Tron Converter</a>
+    </article>
+  </body>
+</html>
