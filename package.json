@@ -9,7 +9,10 @@
     "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "prepare": "husky"
   },
   "dependencies": {
     "@noble/hashes": "^1.8.0",
@@ -23,28 +26,52 @@
   "devDependencies": {
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^8.36.0",
+    "@typescript-eslint/parser": "^8.36.0",
     "@vitejs/plugin-react": "^4.0.0",
     "eslint": "^8.52.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.2",
     "typescript": "^5.3.3",
     "vite": "^4.5.0",
     "vitest": "^1.0.0"
   },
   "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "ecmaVersion": 2021,
-      "sourceType": "module"
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
     },
+    "plugins": [
+      "@typescript-eslint",
+      "react",
+      "react-hooks"
+    ],
     "extends": [
       "eslint:recommended",
       "plugin:react/recommended",
+      "plugin:react/jsx-runtime",
       "plugin:react-hooks/recommended"
     ],
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true
+    },
     "settings": {
       "react": {
         "version": "18.2"
       }
+    },
+    "rules": {
+      "react/react-in-jsx-scope": "off",
+      "@typescript-eslint/no-unused-vars": "warn"
     }
   },
   "browserslist": {
@@ -57,6 +84,15 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "pnpm test --run --reporter=basic --passWithNoTests"
+    ],
+    "*.{js,jsx,ts,tsx,json,css,md}": [
+      "prettier --write"
     ]
   }
 }

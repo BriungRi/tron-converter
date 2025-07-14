@@ -1,11 +1,12 @@
-import "./App.css";
-import React, { useCallback, useState, useRef } from "react";
-import { toHex, fromHex } from "./utils";
-import { toChecksumAddress } from "./utils/checksum";
+import './App.css';
+import React, { useCallback, useState, useRef } from 'react';
+import type { JSX } from 'react';
+import { toHex, fromHex } from './utils';
+import { toChecksumAddress } from './utils/checksum';
 
 function App(): JSX.Element {
-  const [hexAddress, setHexAddress] = useState<string>("");
-  const [tronAddress, setTronAddress] = useState<string>("");
+  const [hexAddress, setHexAddress] = useState<string>('');
+  const [tronAddress, setTronAddress] = useState<string>('');
 
   const tronInput = useRef<HTMLInputElement>(null);
   const hexInput = useRef<HTMLInputElement>(null);
@@ -14,13 +15,12 @@ function App(): JSX.Element {
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       try {
-        const input = tronInput.current?.value ?? "";
+        const input = tronInput.current?.value ?? '';
         if (input) {
           const convertedHex = toChecksumAddress(toHex(input).substring(2));
           setHexAddress(convertedHex);
         }
       } catch (err) {
-        // eslint-disable-next-line no-alert -- simple demo error handling
         alert(err);
       }
     },
@@ -31,13 +31,12 @@ function App(): JSX.Element {
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       try {
-        const input = hexInput.current?.value ?? "";
+        const input = hexInput.current?.value ?? '';
         if (input) {
           const convertedTron = fromHex(input);
           setTronAddress(convertedTron);
         }
       } catch (err) {
-        // eslint-disable-next-line no-alert -- simple demo error handling
         alert(err);
       }
     },
@@ -79,7 +78,7 @@ function App(): JSX.Element {
           <input className="InputButton" type="submit" value="Convert" />
           <p className="ConversionResult">
             Tron address: <strong>{tronAddress} </strong>
-            {tronAddress !== "" && (
+            {tronAddress !== '' && (
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -94,7 +93,7 @@ function App(): JSX.Element {
 
       <div className="Footer">
         <p>
-          View source on{" "}
+          View source on{' '}
           <a
             href="https://github.com/BriungRi/tron-converter"
             target="_blank"

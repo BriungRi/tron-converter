@@ -1,14 +1,13 @@
-/* eslint-disable eqeqeq */
-import { sha256 } from "@noble/hashes/sha2";
-import { byteArray2hexStr } from "./bytes";
-import { hexStr2byteArray } from "./code";
-import { encode58, decode58 } from "./base58";
+import { sha256 } from '@noble/hashes/sha2';
+import { byteArray2hexStr } from './bytes';
+import { hexStr2byteArray } from './code';
+import { encode58, decode58 } from './base58';
 
-const ADDRESS_PREFIX = "41";
+const ADDRESS_PREFIX = '41';
 
 function isHex(str: string): boolean {
   return (
-    typeof str === "string" &&
+    typeof str === 'string' &&
     !isNaN(parseInt(str, 16)) &&
     /^(0x|)[a-fA-F0-9]+$/.test(str)
   );
@@ -30,12 +29,12 @@ function getBase58CheckAddress(addressBytes: number[]): string {
 }
 
 function decodeBase58Address(base58Sting: string): number[] {
-  if (typeof base58Sting !== "string")
-    throw new Error("Address must be a string");
-  if (base58Sting.length <= 4) throw new Error("Invalid base58 address");
+  if (typeof base58Sting !== 'string')
+    throw new Error('Address must be a string');
+  if (base58Sting.length <= 4) throw new Error('Invalid base58 address');
 
   let address = decode58(base58Sting);
-  if (base58Sting.length <= 4) throw new Error("Invalid base58 address");
+  if (base58Sting.length <= 4) throw new Error('Invalid base58 address');
 
   const len = address.length;
   const offset = len - 4;
@@ -56,7 +55,7 @@ function decodeBase58Address(base58Sting: string): number[] {
     return address;
   }
 
-  throw new Error("Invalid address provided");
+  throw new Error('Invalid address provided');
 }
 
 // Public helpers
